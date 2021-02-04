@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada&family=Nunito&display=swap');
+*{
+	font-family: 'Nunito', sans-serif;
+	color: rgb(255, 255, 255);
+	margin: 0;
+	padding: 0;
+	font-size: 24px;
+}
+html,body{
+	height: 100%;
+	width: 100%;
+	background-color: rgb(34, 34, 34);
+}
+body{
+	display: flex;
+	flex-direction: column;
+}
+#Title{
+	flex-grow: 0;
+	height:60px;
+	padding-top: 20px;
+	padding-left: 20vw;
+	border-bottom: rgb(143, 143, 143) solid 1px;
+}
+#Connect{
+	flex-direction: column;
+	justify-content:stretch;
+	margin-left: 20vw;
+	margin-right: 20vw;
+	display: flex;
+	
+	margin-top: auto;
+	margin-bottom: auto;
+
+}
+#Connect button{
+	background-color: rgb(22, 22, 22);
+	width: 100%;
+	border: rgb(143, 143, 143) solid 1px;
+	padding:10px;
+	transition: all .2s;
+}
+#Connect button:hover{
+	background-color: rgb(59, 59, 59);
+}
+#Connect button:active{
+	background-color:rgb(143, 143, 143);
+	color: rgb(34, 34, 34);
+}
+#Connect button:disabled{
+	background-color: rgb(37, 37, 37);
+	color:rgb(99, 99, 99);
+}
+#Connect input{
+	margin-bottom: 20px;
+	background-color: rgb(22, 22, 22);
+	width: 100%;
+	border: rgb(143, 143, 143) solid 1px;
+	padding:10px;
+	text-align: center;
+	transition: all .2s;
+}
+.Disabled{
+	border:rgb(177, 66, 66) solid 2px !important;
+}

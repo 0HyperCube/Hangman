@@ -21,11 +21,15 @@ var UsernameInput = {
 	},
 
 	// If the submit button is pressed, the username is valid.
-	Submit: function () {
+	Submit: async function () {
 		let name = this.UsernameBox.value;
 		this.UsernameBox.style.visibility = "hidden";
 		this.ConnectButton.style.visibility = "hidden";
-		alert("TODO: Implement GraphQL to send the username ", name);
+		
+
+		let x = await fetch("/connect");
+		console.log(x);
+		console.log(await x.text());
 	},
 }
 

@@ -1,6 +1,6 @@
 ## Hangman
 
-This is a website created in [Rust](https://www.rust-lang.org/) with the [Tide](https://docs.rs/tide/) networking framework. The frontend is done in vinilla javascript. There is just one html file and communication during the game is done through [GraphQL](graphql.org).
+This is a website created in [Rust](https://www.rust-lang.org/) with the [Tide](https://docs.rs/tide/) networking framework. The frontend is done in vanilla javascript. There is just one html file and communication during the game is done through [GraphQL](graphql.org).
 
 ### Running & Editing
 

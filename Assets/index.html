@@ -2,17 +2,17 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>Hangman Online</title>
-	<link rel="shortcut icon" type="image/jpg" href="icon.png"/>
-	<link rel="stylesheet" href="style.css"/>
-	<script src="scripts.js"></script>
+	<link rel="shortcut icon" type="image/jpg" href="Icon.png"/>
+	<link rel="stylesheet" href="Style.css"/>
+	<script src="UsernameInput.js"></script>
 </head>
 <body>
-	<div id="title">
+	<div id="Title">
 		<h1>Hangman Online</h1>
 	</div>
-	<div id="connect">
-		<input type="text" id="name" maxlength="60" placeholder="Username" autocomplete="off"><br>
-		<button id="confirmButton" onclick="buttonClick()">Connect</button>
+	<div id="Connect">
+		<input type="text" id="Username" maxlength="60" placeholder="Username" autocomplete="off" oninput="UsernameInput.OnEdit()"><br>
+		<button id="ConnectButton" onclick="UsernameInput.Submit()">Connect</button>
 	</div>
 	
 </body>

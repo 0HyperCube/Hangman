@@ -15,14 +15,14 @@ body{
 	display: flex;
 	flex-direction: column;
 }
-#title{
+#Title{
 	flex-grow: 0;
 	height:60px;
 	padding-top: 20px;
 	padding-left: 20vw;
 	border-bottom: rgb(143, 143, 143) solid 1px;
 }
-#connect{
+#Connect{
 	flex-direction: column;
 	justify-content:stretch;
 	margin-left: 20vw;
@@ -33,25 +33,33 @@ body{
 	margin-bottom: auto;
 
 }
-#connect button{
+#Connect button{
 	background-color: rgb(22, 22, 22);
 	width: 100%;
 	border: rgb(143, 143, 143) solid 1px;
 	padding:10px;
 	transition: all .2s;
 }
-#connect button:hover{
+#Connect button:hover{
 	background-color: rgb(59, 59, 59);
 }
-#connect button:active{
+#Connect button:active{
 	background-color:rgb(143, 143, 143);
 	color: rgb(34, 34, 34);
 }
-#connect input{
+#Connect button:disabled{
+	background-color: rgb(37, 37, 37);
+	color:rgb(99, 99, 99);
+}
+#Connect input{
 	margin-bottom: 20px;
 	background-color: rgb(22, 22, 22);
 	width: 100%;
 	border: rgb(143, 143, 143) solid 1px;
 	padding:10px;
 	text-align: center;
+	transition: all .2s;
+}
+.Disabled{
+	border:rgb(177, 66, 66) solid 2px !important;
 }

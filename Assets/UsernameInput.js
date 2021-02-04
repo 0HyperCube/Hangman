@@ -23,7 +23,7 @@ var UsernameInput = {
 	// If the submit button is pressed, the username is valid.
 	Submit: function () {
 		let name = this.UsernameBox.value;
-		this.style.visibility = "hidden";
+		this.UsernameBox.style.visibility = "hidden";
 		this.ConnectButton.style.visibility = "hidden";
 		alert("TODO: Implement GraphQL to send the username ", name);
 	},

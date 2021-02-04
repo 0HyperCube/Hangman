@@ -10,7 +10,6 @@ html,body{
 	height: 100%;
 	width: 100%;
 	background-color: rgb(34, 34, 34);
-
 }
 body{
 	display: flex;
@@ -37,9 +36,22 @@ body{
 #connect button{
 	background-color: rgb(22, 22, 22);
 	width: 100%;
+	border: rgb(143, 143, 143) solid 1px;
+	padding:10px;
+	transition: all .2s;
+}
+#connect button:hover{
+	background-color: rgb(59, 59, 59);
+}
+#connect button:active{
+	background-color:rgb(143, 143, 143);
+	color: rgb(34, 34, 34);
 }
 #connect input{
-	margin-bottom: 5px;
+	margin-bottom: 20px;
 	background-color: rgb(22, 22, 22);
 	width: 100%;
+	border: rgb(143, 143, 143) solid 1px;
+	padding:10px;
+	text-align: center;
 }

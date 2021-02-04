@@ -1,18 +1,18 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title>Example</title>
+	<title>Hangman Online</title>
 	<link rel="shortcut icon" type="image/jpg" href="icon.png"/>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css"/>
+	<script src="scripts.js"></script>
 </head>
 <body>
 	<div id="title">
 		<h1>Hangman Online</h1>
 	</div>
 	<div id="connect">
-		
 		<input type="text" id="name" maxlength="60" placeholder="Username" autocomplete="off"><br>
-		<button>Connect</button>
+		<button id="confirmButton" onclick="buttonClick()">Connect</button>
 	</div>
 	
 </body>

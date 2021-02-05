@@ -26,10 +26,17 @@ var UsernameInput = {
 		this.UsernameBox.style.visibility = "hidden";
 		this.ConnectButton.style.visibility = "hidden";
 		
+		await fetch("/connect", {
+			method: "POST",
+			body: JSON.stringify({
+				name: "bob"
+			})
+		});
 
-		let x = await fetch("/connect");
-		console.log(x);
-		console.log(await x.text());
+		let x = await fetch("/request");
+		let json = await x.json();
+		console.log(json);
+		console.log("isbob is ",json.is_bob," and if is bob is "+json.height+"cm");
 	},
 }
 

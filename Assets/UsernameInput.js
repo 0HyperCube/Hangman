@@ -22,9 +22,13 @@ var UsernameInput = {
 
 	// If the submit button is pressed, the username is valid.
 	Submit: async function () {
+
+		this.UsernameBox.disabled = true;
+		this.ConnectButton.disabled = true;
+		this.ConnectButton.classList.add("ConnectingInfo");
+		this.ConnectButton.innerHTML="Connecting...";
+
 		let name = this.UsernameBox.value;
-		this.UsernameBox.style.visibility = "hidden";
-		this.ConnectButton.style.visibility = "hidden";
 		
 		await fetch("/connect", {
 			method: "POST",

@@ -1,2 +1,4 @@
 import webbrowser
-webbrowser.open('http://localhost:6543/')
+
+if __name__ == "__main__":
+    webbrowser.open('http://localhost:6543/')

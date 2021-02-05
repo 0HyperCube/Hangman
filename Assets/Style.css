@@ -15,6 +15,9 @@ body{
 	display: flex;
 	flex-direction: column;
 }
+#Title {
+	background-color: rgb(22, 22, 22);
+}
 #Title h1{
 	flex-grow: 0;
 	height:60px;
@@ -76,4 +79,11 @@ body{
 }
 .Disabled{
 	border:rgb(177, 66, 66) solid 2px !important;
+}
+#Footer footer{
+	color: rgb(99, 99, 99);
+	padding-left: 20vw;
+}
+#Footer:hover a{
+	color: cyan;
 }

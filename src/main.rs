@@ -14,7 +14,7 @@ async fn connect(mut request: Request<()> ) -> tide::Result<impl Into<Response>>
 
 }
 
-async fn request(_: Request<()> ) -> tide::Result<impl Into<Response>> {
+async fn get_all_members(_: Request<()> ) -> tide::Result<impl Into<Response>> {
 	
 	let response : TestResponse = TestResponse{is_bob:true,height:43};
 
@@ -43,7 +43,7 @@ async fn main() -> std::result::Result<(), std::io::Error> {
 	app.at("/").serve_dir("Assets/")?;
 	app.at("/").serve_file("Assets/Index.html")?;
 	app.at("/connect").post(connect);
-	app.at("/request").get(request);
+	app.at("/getallmembers").get(get_all_members);
 	app.listen("127.0.0.1:6543").await?;
 	Ok(())
 	

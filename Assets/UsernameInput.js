@@ -27,17 +27,17 @@ var UsernameInput = {
 		this.ConnectButton.disabled = true;
 		this.ConnectButton.classList.add("ConnectingInfo");
 		this.ConnectButton.innerHTML="Connecting...";
-
-		let name = this.UsernameBox.value;
 		
+		let request = JSON.stringify({
+				"name": this.UsernameBox.value
+			});
+		console.log(request);
 		await fetch("/connect", {
 			method: "POST",
-			body: JSON.stringify({
-				name: "bob"
-			})
+			body: request
 		});
 
-		let x = await fetch("/request");
+		let x = await fetch("/getallmembers");
 		let json = await x.json();
 		console.log(json);
 		console.log("isbob is ",json.is_bob," and if is bob is "+json.height+"cm");

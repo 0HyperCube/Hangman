@@ -22,6 +22,11 @@ struct Lobby{
 struct ClientConnection {
 	username: String,
 }
+static mut LOBBY : Lobby = 
+Lobby{
+	latest_action: 0,
+	users_in_lobby : LinkedList::new()
+};
 
 async fn connect(mut request: Request<()> ) -> tide::Result<impl Into<Response>> {
 	println!("Recieved new connection request");

@@ -85,6 +85,9 @@ body{
 	padding-right: 2vw;
 	text-align: right;
 }
-#Footer:hover a{
+#Footer a{
+	color: cornflowerblue;
+}
+#Footer a:hover{
 	color: cyan;
 }

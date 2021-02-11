@@ -3,7 +3,11 @@ use serde::{Deserialize, Serialize};
 use tide::{Request, Response, http::{mime}};
 use std::{collections::LinkedList};
 
+#[macro_use]
+extern crate lazy_static;
+extern crate mut_static;
 
+use mut_static::MutStatic;
 
 #[derive(Serialize, Deserialize)]
 struct LobbyUser{
@@ -22,11 +26,9 @@ struct Lobby{
 struct ClientConnection {
 	username: String,
 }
-static mut LOBBY : Lobby = 
-Lobby{
-	latest_action: 0,
-	users_in_lobby : LinkedList::new()
-};
+lazy_static! {
+	static ref LOBBY: MutStatic<Lobby> = MutStatic::new();
+}
 
 async fn connect(mut request: Request<()> ) -> tide::Result<impl Into<Response>> {
 	println!("Recieved new connection request");
@@ -35,7 +37,7 @@ async fn connect(mut request: Request<()> ) -> tide::Result<impl Into<Response>>
 	println!("Got name {}", client_connection.username);
 	
 	// TODO: Add user to lobby
-
+	LOBBY.set(Lobby{ latest_action: 0, users_in_lobby: LinkedList::new()}).unwrap();
 
 	Ok(Response::builder(200).build())
 
@@ -52,7 +54,8 @@ async fn get_lobby(_: Request<()> ) -> tide::Result<impl Into<Response>> {
 
 #[async_std::main]
 async fn main() -> std::result::Result<(), std::io::Error> {
-	println!("{}", u64::MAX);
+	// Set empty lobby
+	LOBBY.set(Lobby{ latest_action: 0, users_in_lobby: LinkedList::new()}).unwrap();
 
 	tide::log::start();
 	let mut app = tide::new();

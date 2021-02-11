@@ -20,6 +20,31 @@ var UsernameInput = {
 		}
 	},
 
+	SendUsername: async function(){
+		console.log("Creating connect request.");
+
+		let request = JSON.stringify({
+				"username": this.UsernameBox.value
+			});
+
+		console.log("Sending connect request. String of data sending: ",request);
+
+		await fetch("/connect", {
+			method: "POST",
+			body: request
+		});
+
+		console.log("Sent connect request");
+	},
+
+	FetchLobby: async function(){
+		console.log("Fetching lobby");
+		let x = await fetch("/getlobby");
+		console.log("Decoding lobby. Response recieved: ", x);
+		let json = await x.json();
+		console.log("Sucsessfully decoded JSON. JSON data: ",json);
+	},
+
 	// If the submit button is pressed, the username is valid.
 	Submit: async function () {
 
@@ -28,19 +53,9 @@ var UsernameInput = {
 		this.ConnectButton.classList.add("ConnectingInfo");
 		this.ConnectButton.innerHTML="Connecting...";
 		
-		let request = JSON.stringify({
-				"name": this.UsernameBox.value
-			});
-		console.log(request);
-		await fetch("/connect", {
-			method: "POST",
-			body: request
-		});
+		await this.SendUsername();
 
-		let x = await fetch("/getallmembers");
-		let json = await x.json();
-		console.log(json);
-		console.log("isbob is ",json.is_bob," and if is bob is "+json.height+"cm");
+		await this.FetchLobby();
 	},
 }
 

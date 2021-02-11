@@ -63,7 +63,7 @@ async fn main() -> std::result::Result<(), std::io::Error> {
 	app.at("/").serve_dir("Assets/")?;
 	app.at("/").serve_file("Assets/Index.html")?;
 	app.at("/connect").post(connect);
-	app.at("/getallmembers").get(get_lobby);
+	app.at("/getlobby").get(get_lobby);
 	app.listen("127.0.0.1:6543").await?;
 	Ok(())
 	

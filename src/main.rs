@@ -33,19 +33,22 @@ async fn connect(mut request: Request<()> ) -> tide::Result<impl Into<Response>>
 	let str : &str = &request.take_body().into_string().await?;
 	let client_connection : ClientConnection = serde_json::from_str(str)?;
 	println!("Got name {}", client_connection.username);
-	
-	// TODO: Add user to lobby
 
+
+	// Add user to lobby
+	unsafe {
+		LOBBY.users_in_lobby.push_back(LobbyUser{ username: client_connection.username, last_fetch_action: 0, is_joining: false});
+	}
 
 	Ok(Response::builder(200).build())
 
 }
 
 async fn get_lobby(_: Request<()> ) -> tide::Result<impl Into<Response>> {
-	
+	let lobby_str = serde_json::to_string(unsafe{ &LOBBY }).unwrap();
 
 	Ok(Response::builder(200)
-		.body("hi")
+		.body(lobby_str)
 		.content_type(mime::HTML))
 
 }
